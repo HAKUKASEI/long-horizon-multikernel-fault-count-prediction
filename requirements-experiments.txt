@@ -1,0 +1,6 @@
+-r requirements.txt
+numpy
+pandas
+scipy
+matplotlib
+numba

@@ -1,4 +1,4 @@
-name: Validate OSS Time Data
+name: Validate Data and Experiment Sources
 
 on:
   push:

@@ -1,10 +1,12 @@
 # Long-Horizon Multi-Kernel Fault-Count Prediction
 
-Data for **Long-Horizon Software Fault-Count Prediction via Sequentially Updated Multi-Kernel Intensity Estimation**.
+Data and experiment programs for **Long-Horizon Software Fault-Count Prediction via Sequentially Updated Multi-Kernel Intensity Estimation**.
 
-This release contains the four open-source datasets used in the paper, their archived issue records, and a deterministic reconstruction script. The model inputs are **individual fault-detection times in elapsed calendar seconds**, not monthly fault counts. Fault counts are the prediction target in the paper.
+This release contains the four open-source datasets used in the paper, their archived issue records, a deterministic reconstruction script, and seven original single-kernel/multi-kernel experiment programs. The model inputs are **individual fault-detection times in elapsed calendar seconds**, not monthly fault counts. Fault counts are the prediction target in the paper.
 
 [Download the complete workbook](data/JSS_OSS_time_datasets_OSS1_OSS4.xlsx) | [One-column Excel inputs](data/OSS) | [Data dictionary](docs/data_dictionary.md) | [Reconstruction script](scripts/construct_oss_time_datasets.py)
+
+[Experiment programs and run guide](experiments/README.md) | [Original-source checksums](experiments/source_manifest.json)
 
 ![Chronological event-time sequences for the four OSS datasets](docs/figures/oss_time_sequences.png)
 
@@ -49,6 +51,20 @@ times = [row[0] for row in workbook.active.iter_rows(values_only=True)]
 workbook.close()
 ```
 
+## Run the Experiment Programs
+
+The seven supplied programs are preserved byte-for-byte in [`experiments/`](experiments/README.md), organized into single-kernel and multi-kernel directories. Their algorithms and numerical settings have not been changed.
+
+```bash
+python -m pip install -r requirements-experiments.txt
+python scripts/prepare_experiment.py --list
+python scripts/prepare_experiment.py single-dynamic
+cd runs/single-dynamic
+python experiment.py
+```
+
+The helper only prepares a new directory with the original program and the four OSS Excel inputs. It accommodates the original `SDATA`/`DATA` paths without modifying source code or numerical settings. See the [run guide](experiments/README.md) for all seven variants, worker limits, optional notification behavior, and the distinction between the two fixed-bandwidth/dynamic-weight versions. Full forecasting runs are not executed by the release tests.
+
 ## Construction and Provenance
 
 1. Retain the records in the four matched historical crawler sheets.
@@ -67,6 +83,7 @@ The complete workbook preserves issue numbers, titles, original labels, original
 .
 |-- README.md
 |-- requirements.txt
+|-- requirements-experiments.txt
 |-- data/
 |   |-- JSS_OSS_time_datasets_OSS1_OSS4.xlsx
 |   |-- OSS/                       # Four original one-column Excel inputs
@@ -74,13 +91,20 @@ The complete workbook preserves issue numbers, titles, original labels, original
 |-- docs/
 |   |-- data_dictionary.md
 |   `-- figures/oss_time_sequences.png
+|-- experiments/
+|   |-- README.md
+|   |-- source_manifest.json
+|   |-- single_kernel/             # Two unchanged original programs
+|   `-- multi_kernel/              # Five unchanged original programs
 |-- scripts/
-|   `-- construct_oss_time_datasets.py
+|   |-- construct_oss_time_datasets.py
+|   `-- prepare_experiment.py
 |-- tests/
-|   `-- test_construct_oss_time_datasets.py
+|   |-- test_construct_oss_time_datasets.py
+|   `-- test_experiment_package.py
 `-- .github/workflows/validate-data.yml
 ```
 
 ## Release Scope
 
-This initial release covers the four OSS **time datasets** and their reconstruction checks. It does not include the four closed-source datasets or the paper's forecasting implementations. The OSS IDs here are specific to this paper and must not be substituted for the earlier IST monthly count-data IDs.
+This release includes the four OSS **time datasets**, their reconstruction checks, and the seven supplied forecasting programs. It does not include the four closed-source datasets. Packaging tests check source integrity, syntax, input staging, and dataset consistency; they do not constitute a rerun of the paper's forecasting results. The OSS IDs here are specific to this paper and must not be substituted for the earlier IST monthly count-data IDs.

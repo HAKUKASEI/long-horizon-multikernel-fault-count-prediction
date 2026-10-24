@@ -1,0 +1,2 @@
+# Preserve the supplied experiment files byte-for-byte, including line endings.
+experiments/**/*.py -text
