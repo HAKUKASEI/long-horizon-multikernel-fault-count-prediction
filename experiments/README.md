@@ -2,19 +2,19 @@
 
 The seven supplied programs are preserved **byte-for-byte**. Only their repository filenames and locations have been organized. No algorithms, constants, bandwidth searches, weights, kernels, worker limits, observation fractions, output names, or main-entry settings have been edited.
 
-[`source_manifest.json`](source_manifest.json) records each original filename, repository path, byte count, SHA-256 digest, input directory, output directory, and main-entry settings. Git attributes prevent line-ending normalization of these source files. Tests verify their hashes and compile their syntax without importing or running the experiments.
+[`source_manifest.json`](source_manifest.json) records each English release filename, repository path, byte count, SHA-256 digest, input directory, output directory, and main-entry settings. Git attributes prevent line-ending normalization of these source files. Tests verify their hashes and compile their syntax without importing or running the experiments.
 
 ## Program Map
 
-| Preparation ID | Method | Original filename | Preserved source |
-|---|---|---|---|
-| `single-dynamic` | Single kernel, sequential bandwidth | 单核动态窗宽.py | [Source](single_kernel/dynamic_bandwidth.py) |
-| `single-fixed` | Single kernel, fixed bandwidth | 单核固定窗宽.py | [Source](single_kernel/fixed_bandwidth.py) |
-| `multi-dynamic-dynamic` | Multi-kernel, dynamic bandwidth and weights | 动态窗宽动态参数.py | [Source](multi_kernel/dynamic_bandwidth_dynamic_weights.py) |
-| `multi-dynamic-fixed` | Multi-kernel, dynamic bandwidth and fixed weights | 动态窗宽固定权重.py | [Source](multi_kernel/dynamic_bandwidth_fixed_weights.py) |
-| `multi-fixed-dynamic` | Multi-kernel, fixed bandwidth and dynamic weights | 固定窗宽动态权重.py | [Source](multi_kernel/fixed_bandwidth_dynamic_weights.py) |
-| `multi-fixed-dynamic-underscore` | Separately supplied fixed-bandwidth/dynamic-weight variant | 固定窗宽_动态权重.py | [Source](multi_kernel/fixed_bandwidth_dynamic_weights_underscore_variant.py) |
-| `multi-fixed-fixed` | Multi-kernel, fixed bandwidth and weights | 固定窗宽固定权重.py | [Source](multi_kernel/fixed_bandwidth_fixed_weights.py) |
+| Preparation ID | Method | Preserved source |
+|---|---|---|
+| `single-dynamic` | Single kernel, sequential bandwidth | [dynamic_bandwidth.py](single_kernel/dynamic_bandwidth.py) |
+| `single-fixed` | Single kernel, fixed bandwidth | [fixed_bandwidth.py](single_kernel/fixed_bandwidth.py) |
+| `multi-dynamic-dynamic` | Multi-kernel, dynamic bandwidth and weights | [dynamic_bandwidth_dynamic_weights.py](multi_kernel/dynamic_bandwidth_dynamic_weights.py) |
+| `multi-dynamic-fixed` | Multi-kernel, dynamic bandwidth and fixed weights | [dynamic_bandwidth_fixed_weights.py](multi_kernel/dynamic_bandwidth_fixed_weights.py) |
+| `multi-fixed-dynamic` | Multi-kernel, fixed bandwidth and dynamic weights | [fixed_bandwidth_dynamic_weights.py](multi_kernel/fixed_bandwidth_dynamic_weights.py) |
+| `multi-fixed-dynamic-underscore` | Separately supplied fixed-bandwidth/dynamic-weight variant | [fixed_bandwidth_dynamic_weights_underscore_variant.py](multi_kernel/fixed_bandwidth_dynamic_weights_underscore_variant.py) |
+| `multi-fixed-fixed` | Multi-kernel, fixed bandwidth and weights | [fixed_bandwidth_fixed_weights.py](multi_kernel/fixed_bandwidth_fixed_weights.py) |
 
 The two fixed-bandwidth/dynamic-weight files are **not duplicates**. Their prediction and bandwidth-related functions differ. Both are retained without merging, and neither is designated as the definitive version for a particular paper result table. Select the variant that was used for the result being reproduced.
 

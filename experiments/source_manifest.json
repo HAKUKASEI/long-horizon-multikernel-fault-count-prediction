@@ -4,7 +4,7 @@
   "experiments": [
     {
       "id": "single-dynamic",
-      "source_filename": "\u5355\u6838\u52a8\u6001\u7a97\u5bbd.py",
+      "english_filename": "dynamic_bandwidth.py",
       "path": "experiments/single_kernel/dynamic_bandwidth.py",
       "sha256": "642278d4dd3c0a31fa51902eebfe1124eeef9ad6ebbe9bd09c49963023c4b221",
       "bytes": 65009,
@@ -24,7 +24,7 @@
     },
     {
       "id": "single-fixed",
-      "source_filename": "\u5355\u6838\u56fa\u5b9a\u7a97\u5bbd.py",
+      "english_filename": "fixed_bandwidth.py",
       "path": "experiments/single_kernel/fixed_bandwidth.py",
       "sha256": "9a087ce53c3d6249f4d8291ba4fe43e46c1ad1ec6fb00c0a6c87c97cc35d427b",
       "bytes": 59399,
@@ -44,7 +44,7 @@
     },
     {
       "id": "multi-dynamic-dynamic",
-      "source_filename": "\u52a8\u6001\u7a97\u5bbd\u52a8\u6001\u53c2\u6570.py",
+      "english_filename": "dynamic_bandwidth_dynamic_weights.py",
       "path": "experiments/multi_kernel/dynamic_bandwidth_dynamic_weights.py",
       "sha256": "f3def0181a18528826c028a30cc6bb82784cebe08560ae3e5818f6dcf03e09c8",
       "bytes": 56274,
@@ -72,7 +72,7 @@
     },
     {
       "id": "multi-dynamic-fixed",
-      "source_filename": "\u52a8\u6001\u7a97\u5bbd\u56fa\u5b9a\u6743\u91cd.py",
+      "english_filename": "dynamic_bandwidth_fixed_weights.py",
       "path": "experiments/multi_kernel/dynamic_bandwidth_fixed_weights.py",
       "sha256": "4b3689234dc3b6bda4d0a9c958bf06fe928d0eb9c18471e734c634cd65d125d9",
       "bytes": 58329,
@@ -100,7 +100,7 @@
     },
     {
       "id": "multi-fixed-dynamic-underscore",
-      "source_filename": "\u56fa\u5b9a\u7a97\u5bbd_\u52a8\u6001\u6743\u91cd.py",
+      "english_filename": "fixed_bandwidth_dynamic_weights_underscore_variant.py",
       "path": "experiments/multi_kernel/fixed_bandwidth_dynamic_weights_underscore_variant.py",
       "sha256": "81da2d48932c9b40c51cd96aa0ceb6ca48631e27d0d6979795cf30e60de58254",
       "bytes": 55989,
@@ -128,7 +128,7 @@
     },
     {
       "id": "multi-fixed-dynamic",
-      "source_filename": "\u56fa\u5b9a\u7a97\u5bbd\u52a8\u6001\u6743\u91cd.py",
+      "english_filename": "fixed_bandwidth_dynamic_weights.py",
       "path": "experiments/multi_kernel/fixed_bandwidth_dynamic_weights.py",
       "sha256": "e4ee660107ab17b897055b3ac2e2f2c53b86304bcd473d3074113e302bd46942",
       "bytes": 58304,
@@ -156,7 +156,7 @@
     },
     {
       "id": "multi-fixed-fixed",
-      "source_filename": "\u56fa\u5b9a\u7a97\u5bbd\u56fa\u5b9a\u6743\u91cd.py",
+      "english_filename": "fixed_bandwidth_fixed_weights.py",
       "path": "experiments/multi_kernel/fixed_bandwidth_fixed_weights.py",
       "sha256": "2fcbf0f37c8338daf24ab82633cf21beaba7ed56639120d7c00cd96ab4b0c4ba",
       "bytes": 57877,
